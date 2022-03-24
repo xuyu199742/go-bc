@@ -1,0 +1,38 @@
+Name: order-api
+Host: 0.0.0.0
+Port: 8004
+Mode: dev
+
+#监控
+Prometheus:
+  Host: 0.0.0.0
+  Port: 3002
+  Path: /metrics
+
+#链路追踪
+Telemetry:
+  Name: order-api
+  Endpoint: http://jaeger:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+#rpc
+OrderRpcConf:
+  Endpoints:
+    - 127.0.0.1:9004
+  NonBlock: true
+
+PaymentRpcConf:
+  Endpoints:
+    - 127.0.0.1:9005
+  NonBlock: true
+
+TravelRpcConf:
+  Endpoints:
+    - 127.0.0.1:9003
+  NonBlock: true
+
+Log:
+  ServiceName: order-api
+  Level: error
+
