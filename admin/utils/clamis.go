@@ -1,10 +1,10 @@
 package utils
 
 import (
-	"go-bc/admin/global"
-	systemReq "go-bc/admin/model/system/request"
 	"github.com/gin-gonic/gin"
 	uuid "github.com/satori/go.uuid"
+	"go-bc/admin/global"
+	systemReq "go-bc/admin/model/system/request"
 )
 
 func GetClaims(c *gin.Context) (*systemReq.CustomClaims, error) {

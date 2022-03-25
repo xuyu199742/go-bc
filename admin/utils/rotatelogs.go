@@ -3,8 +3,8 @@ package utils
 import (
 	"os"
 
-	"go-bc/admin/global"
 	"github.com/natefinch/lumberjack"
+	"go-bc/admin/global"
 	"go.uber.org/zap/zapcore"
 )
 

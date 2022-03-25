@@ -1,9 +1,9 @@
 package example
 
 import (
+	"github.com/pkg/errors"
 	"go-bc/admin/global"
 	"go-bc/admin/model/example"
-	"github.com/pkg/errors"
 	"gorm.io/gorm"
 )
 

@@ -1,9 +1,9 @@
 package upload
 
 import (
-	"go-bc/admin/global"
 	"github.com/huaweicloud/huaweicloud-sdk-go-obs/obs"
 	"github.com/pkg/errors"
+	"go-bc/admin/global"
 	"mime/multipart"
 )
 

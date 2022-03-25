@@ -1,12 +1,12 @@
 package system
 
 import (
+	"github.com/gin-gonic/gin"
 	"go-bc/admin/global"
 	"go-bc/admin/model/common/response"
 	"go-bc/admin/model/system/request"
 	systemRes "go-bc/admin/model/system/response"
 	"go-bc/admin/utils"
-	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
 

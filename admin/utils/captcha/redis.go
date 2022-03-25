@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"go-bc/admin/global"
 	"github.com/mojocn/base64Captcha"
+	"go-bc/admin/global"
 	"go.uber.org/zap"
 )
 

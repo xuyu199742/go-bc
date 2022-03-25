@@ -1,11 +1,11 @@
 package system
 
 import (
+	"github.com/gin-gonic/gin"
+	"github.com/mojocn/base64Captcha"
 	"go-bc/admin/global"
 	"go-bc/admin/model/common/response"
 	systemRes "go-bc/admin/model/system/response"
-	"github.com/gin-gonic/gin"
-	"github.com/mojocn/base64Captcha"
 	"go.uber.org/zap"
 )
 

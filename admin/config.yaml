@@ -7,7 +7,7 @@ aliyun-oss:
   base-path: yourBasePath
 autocode:
   transfer-restart: true
-  root: /Users/seven/Developer/goenv
+  root: /Users/bruce/docker/code/go/src/go-bc
   server: /server
   server-api: /api/v1/autocode
   server-initialize: /initialize
@@ -27,7 +27,7 @@ aws-s3:
   base-url: https://gin.vue.admin
   path-prefix: go-bc/admin
 captcha:
-  key-long: 6
+  key-long: 4
   img-width: 240
   img-height: 80
 casbin:
@@ -81,7 +81,7 @@ jwt:
   buffer-time: 86400
   expires-time: 604800
   issuer: qmPlus
-  signing-key: 3f7ebed7-bc13-42f4-afc3-da4f8a1bcf9a
+  signing-key: f708451c-c8ad-44b6-87d6-98717b68003e
 local:
   path: uploads/file
 mysql:
@@ -90,7 +90,7 @@ mysql:
   config: charset=utf8mb4&parseTime=True&loc=Local
   db-name: go-bc
   username: root
-  password: 123456
+  password: "123456"
   max-idle-conns: 0
   max-open-conns: 0
   log-mode: ""
@@ -118,6 +118,38 @@ redis:
   db: 0
   addr: 127.0.0.1:6379
   password: ""
+rpcconf:
+  bannerRpcConf:
+    etcd:
+      hosts: []
+      key: ""
+      user: ""
+      pass: ""
+      certfile: ""
+      certkeyfile: ""
+      cacertfile: ""
+      insecureskipverify: false
+    endpoints:
+    - 127.0.0.1:8008
+    target: ""
+    app: ""
+    token: ""
+    nonblock: false
+    timeout: 0
+serviceconf:
+  log:
+    level: error
+    mode: console
+    servicename: admin-api
+  prometheus:
+    host: 0.0.0.0
+    path: /metrics
+    port: 3015
+  telemetry:
+    batcher: jaeger
+    endpoint: http://jaeger:14268/api/traces
+    name: admin-api
+    sampler: 1
 system:
   env: public
   addr: 8888
@@ -148,33 +180,7 @@ zap:
   format: console
   prefix: '[go-bc/admin]'
   director: log
-  showLine: true
+  showLine: false
   encode-level: LowercaseColorLevelEncoder
   stacktrace-key: stacktrace
   log-in-console: true
-
-
-# 当前服务信息
-serviceConf:
-  Log:
-    ServiceName: admin-api
-    Level: error
-    Mode: console
-
-  #监控
-  Prometheus:
-    Host: 0.0.0.0
-    Port: 3015
-    Path: /metrics
-
-  #链路追踪
-  Telemetry:
-    Name: admin-api
-    Endpoint:  http://jaeger:14268/api/traces
-    Sampler: 1.0
-    Batcher: jaeger
-
-rpcConf:
-  bannerRpcConf:
-    Endpoints:
-      - 127.0.0.1:8008

@@ -2,8 +2,8 @@ package system
 
 import (
 	adapter "github.com/casbin/gorm-adapter/v3"
-	"go-bc/admin/global"
 	"github.com/pkg/errors"
+	"go-bc/admin/global"
 	"gorm.io/gorm"
 )
 
@@ -19,7 +19,7 @@ func (c *casbin) TableName() string {
 func (c *casbin) Initialize() error {
 	entities := []adapter.CasbinRule{
 		{PType: "p", V0: "888", V1: "/base/login", V2: "POST"},
-		{PType: "p", V0: "888", V1: "/user/register", V2: "POST"},
+		{PType: "p", V0: "888", V1: "/user/admin_register", V2: "POST"},
 
 		{PType: "p", V0: "888", V1: "/api/createApi", V2: "POST"},
 		{PType: "p", V0: "888", V1: "/api/getApiList", V2: "POST"},
@@ -120,8 +120,12 @@ func (c *casbin) Initialize() error {
 		{PType: "p", V0: "888", V1: "/excel/exportExcel", V2: "POST"},
 		{PType: "p", V0: "888", V1: "/excel/downloadTemplate", V2: "GET"},
 
+		{PType: "p", V0: "888", V1: "/authorityBtn/setAuthorityBtn", V2: "POST"},
+		{PType: "p", V0: "888", V1: "/authorityBtn/getAuthorityBtn", V2: "POST"},
+		{PType: "p", V0: "888", V1: "/authorityBtn/canRemoveAuthorityBtn", V2: "POST"},
+
 		{PType: "p", V0: "8881", V1: "/base/login", V2: "POST"},
-		{PType: "p", V0: "8881", V1: "/user/register", V2: "POST"},
+		{PType: "p", V0: "8881", V1: "/user/admin_register", V2: "POST"},
 		{PType: "p", V0: "8881", V1: "/api/createApi", V2: "POST"},
 		{PType: "p", V0: "8881", V1: "/api/getApiList", V2: "POST"},
 		{PType: "p", V0: "8881", V1: "/api/getApiById", V2: "POST"},
@@ -160,7 +164,7 @@ func (c *casbin) Initialize() error {
 		{PType: "p", V0: "8881", V1: "/user/getUserInfo", V2: "GET"},
 
 		{PType: "p", V0: "9528", V1: "/base/login", V2: "POST"},
-		{PType: "p", V0: "9528", V1: "/user/register", V2: "POST"},
+		{PType: "p", V0: "9528", V1: "/user/admin_register", V2: "POST"},
 		{PType: "p", V0: "9528", V1: "/api/createApi", V2: "POST"},
 		{PType: "p", V0: "9528", V1: "/api/getApiList", V2: "POST"},
 		{PType: "p", V0: "9528", V1: "/api/getApiById", V2: "POST"},

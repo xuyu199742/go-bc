@@ -1,9 +1,9 @@
 package system
 
 import (
+	"github.com/gin-gonic/gin"
 	v1 "go-bc/admin/api/v1"
 	"go-bc/admin/middleware"
-	"github.com/gin-gonic/gin"
 )
 
 type AuthorityRouter struct{}

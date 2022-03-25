@@ -1,9 +1,9 @@
 package system
 
 import (
+	"github.com/pkg/errors"
 	"go-bc/admin/global"
 	"go-bc/admin/model/system"
-	"github.com/pkg/errors"
 	"gorm.io/gorm"
 )
 

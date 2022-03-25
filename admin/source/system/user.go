@@ -1,10 +1,10 @@
 package system
 
 import (
-	"go-bc/admin/global"
-	"go-bc/admin/model/system"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
+	"go-bc/admin/global"
+	"go-bc/admin/model/system"
 	"gorm.io/gorm"
 )
 

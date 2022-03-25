@@ -2,9 +2,12 @@ package middleware
 
 import (
 	"bytes"
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"strconv"
+	"strings"
 	"time"
 
 	"go-bc/admin/utils"
@@ -30,6 +33,18 @@ func OperationRecord() gin.HandlerFunc {
 			} else {
 				c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(body))
 			}
+		} else {
+			query := c.Request.URL.RawQuery
+			query, _ = url.QueryUnescape(query)
+			split := strings.Split(query, "&")
+			m := make(map[string]string)
+			for _, v := range split {
+				kv := strings.Split(v, "=")
+				if len(kv) == 2 {
+					m[kv[0]] = kv[1]
+				}
+			}
+			body, _ = json.Marshal(&m)
 		}
 		claims, _ := utils.GetClaims(c)
 		if claims.ID != 0 {
